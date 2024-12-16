@@ -1,4 +1,4 @@
-.home {
+/* .home {
     margin-top: 14vh;
     top: 15%;
     height: 87%;
@@ -64,4 +64,45 @@ a {
         height: 15vh;
     }
 
-}
+} */
+
+.home {
+    text-align: center;
+    padding: 5vh 2vw;
+  }
+  
+  .home h1 {
+    font-size: 3rem;
+    margin-bottom: 3vh;
+  }
+  
+  .api-container {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    flex-wrap: wrap;
+  }
+  
+  .api-item {
+    background-color: #333;
+    color: white;
+    padding: 2vh 4vw;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20vw;
+    text-align: center;
+  }
+  
+  .api-item:hover {
+    background-color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .api-item {
+      width: 40vw;
+      font-size: 1.25rem;
+    }
+  }
+  

@@ -1,4 +1,4 @@
-.potter-container {
+/* .potter-container {
     margin-top: 14vh;
     height: auto;
     width: 85%;
@@ -141,4 +141,113 @@ select {
 select:focus {
     outline: none;
     background: #444;
-}
+} */
+
+
+.potter-container {
+    padding: 5vh 2vw;
+    font-family: Arial, sans-serif;
+  }
+  
+  .potter-container h1 {
+    font-size: 3rem;
+    margin-bottom: 3vh;
+  }
+  
+  .selects-container {
+    margin-bottom: 2vh;
+  }
+  
+  .selects-container label {
+    font-size: 1.5rem;
+    margin-right: 1vw;
+  }
+  
+  .selects-container select {
+    font-size: 1.25rem;
+    padding: 1vh 2vw;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+  }
+  
+  .search-box {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin-bottom: 4vh;
+  }
+  
+  .search-box input {
+    font-size: 1.25rem;
+    padding: 1vh 2vw;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+  }
+  
+  .search-box button {
+    font-size: 1.25rem;
+    padding: 1vh 2vw;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-box button:hover {
+    background-color: #555;
+  }
+  
+  .potter-data {
+    margin-top: 3vh;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+  }
+  
+  .potter-card {
+    width: 20vw;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .potter-card img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  
+  .potter-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .potter-card h3 {
+    font-size: 1.5rem;
+    margin-top: 1vh;
+  }
+  
+  .potter-card p {
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .potter-card {
+      width: 40vw;
+    }
+  
+    .potter-card h3 {
+      font-size: 1.25rem;
+    }
+  
+    .search-box input,
+    .search-box button {
+      font-size: 1.125rem;
+    }
+  }
+  
