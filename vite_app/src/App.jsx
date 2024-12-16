@@ -8,7 +8,6 @@ import SearchMeal from "./components/SearchMeal/SearchMeal";
 import SearchCocktail from "./components/SearchCocktail/SearchCocktail";
 import Potter from "./components/Potter/Potter";
 import Banks from "./components/Banks/Banks";
-// import SearchPotter from "./components/SearchPotter/SearchPotter";
 
 function App() {
   return (
@@ -22,11 +21,6 @@ function App() {
         <Route path="/cocktail/:idDrink" element={<SearchCocktail />} />
         <Route path="/potter" element={<Potter />} />
         <Route path="/banks" element={<Banks />} />
-        {/* <Route path="/potter/:lang/:category" element={<Potter />} /> */}
-          {/* <Route
-            path="/potter/:lang/:category/search"
-            element={<SearchPotter />}
-          /> */}
       </Routes>
     </div>
   );

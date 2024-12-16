@@ -15,7 +15,7 @@ h1 {
     margin-left: 2rem;
 }
 
-.api-container{
+.api-container {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -24,11 +24,11 @@ h1 {
     margin: 2rem 0 0 0;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.api-item{
+.api-item {
     border-radius: 1rem;
     width: 10vw;
     height: 5vh;
@@ -43,7 +43,7 @@ a{
     transition: all 0.5s linear;
 }
 
-.api-item:hover{
+.api-item:hover {
     animation: height 0.5s ease-in-out forwards;
     border: white;
     background: #353535;
@@ -52,15 +52,16 @@ a{
 }
 
 @keyframes height {
-    0%{
+    0% {
         transform: scale(1);
         height: 5vh;
         border: gray;
     }
-    100%{
+
+    100% {
         transform: scale(1.1);
         border: white;
         height: 15vh;
     }
-    
+
 }

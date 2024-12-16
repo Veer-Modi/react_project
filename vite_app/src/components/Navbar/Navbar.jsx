@@ -6,11 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <nav className="nav">
-        <NavLink
-          to="/"
-          className="nav-item"
-          activeClassName="active" 
-        >
+        <NavLink to="/" className="nav-item" activeClassName="active">
           Home
         </NavLink>
         <NavLink to="/meal" className="nav-item" activeClassName="active">

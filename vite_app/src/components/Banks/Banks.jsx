@@ -21,7 +21,6 @@ const Banks = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch states from API
   useEffect(() => {
     setLoading(true);
     fetch("https://bank-apis.justinclicks.com/API/V1/STATE/")
@@ -36,7 +35,6 @@ const Banks = () => {
       });
   }, []);
 
-  // Fetch districts based on state
   useEffect(() => {
     if (selectedState) {
       setLoading(true);
@@ -53,7 +51,6 @@ const Banks = () => {
     }
   }, [selectedState]);
 
-  // Fetch cities based on state and district
   useEffect(() => {
     if (selectedDistrict) {
       setLoading(true);
@@ -72,7 +69,6 @@ const Banks = () => {
     }
   }, [selectedDistrict, selectedState]);
 
-  // Fetch centers based on city
   useEffect(() => {
     if (selectedCity) {
       setLoading(true);
@@ -91,7 +87,6 @@ const Banks = () => {
     }
   }, [selectedCity, selectedDistrict, selectedState]);
 
-  // Fetch branches based on center
   useEffect(() => {
     if (selectedCenter) {
       setLoading(true);
@@ -110,7 +105,6 @@ const Banks = () => {
     }
   }, [selectedCenter, selectedCity, selectedDistrict, selectedState]);
 
-  // Fetch branch details based on selected branch
   useEffect(() => {
     if (selectedBranch) {
       setLoading(true);
@@ -135,14 +129,13 @@ const Banks = () => {
     selectedState,
   ]);
 
-  // Fetch IFSC code details
   const handleIfscSearch = (e) => {
     e.preventDefault();
     if (!ifscCode) return;
 
     setLoading(true);
-    setBranchDetails(null); // Reset branch details when performing IFSC search
-    setIfscDetails(null); // Clear any previous IFSC search results
+    setBranchDetails(null);
+    setIfscDetails(null);
     fetch(`https://bank-apis.justinclicks.com/API/V1/IFSC/${ifscCode}/`)
       .then((res) => res.json())
       .then((data) => {
@@ -162,7 +155,6 @@ const Banks = () => {
       {loading && <div>Loading...</div>}
       {error && <div>{error}</div>}
 
-      {/* State Selection */}
       <div className="dropdown">
         <label>Select State:</label>
         <select
@@ -174,7 +166,7 @@ const Banks = () => {
             setCenters([]);
             setBranches([]);
             setBranchDetails(null);
-            setIfscDetails(null); // Reset IFSC details when changing state
+            setIfscDetails(null);
           }}
         >
           <option value="">-- Select State --</option>
@@ -186,7 +178,6 @@ const Banks = () => {
         </select>
       </div>
 
-      {/* District Selection */}
       <div className="dropdown">
         <label>Select District:</label>
         <select
@@ -197,7 +188,7 @@ const Banks = () => {
             setCenters([]);
             setBranches([]);
             setBranchDetails(null);
-            setIfscDetails(null); // Reset IFSC details when changing district
+            setIfscDetails(null);
           }}
           disabled={!selectedState}
         >
@@ -210,7 +201,6 @@ const Banks = () => {
         </select>
       </div>
 
-      {/* City Selection */}
       <div className="dropdown">
         <label>Select City:</label>
         <select
@@ -220,7 +210,7 @@ const Banks = () => {
             setCenters([]);
             setBranches([]);
             setBranchDetails(null);
-            setIfscDetails(null); // Reset IFSC details when changing city
+            setIfscDetails(null);
           }}
           disabled={!selectedDistrict}
         >
@@ -233,7 +223,6 @@ const Banks = () => {
         </select>
       </div>
 
-      {/* Center Selection */}
       <div className="dropdown">
         <label>Select Center:</label>
         <select
@@ -242,7 +231,7 @@ const Banks = () => {
             setSelectedCenter(e.target.value);
             setBranches([]);
             setBranchDetails(null);
-            setIfscDetails(null); // Reset IFSC details when changing center
+            setIfscDetails(null);
           }}
           disabled={!selectedCity}
         >
@@ -255,7 +244,6 @@ const Banks = () => {
         </select>
       </div>
 
-      {/* Branch Selection */}
       <div className="dropdown">
         <label>Select Branch:</label>
         <select
@@ -272,7 +260,6 @@ const Banks = () => {
         </select>
       </div>
 
-      {/* IFSC Search */}
       <div className="ifsc-search">
         <h2>Search by IFSC Code</h2>
         <form onSubmit={handleIfscSearch}>
@@ -287,23 +274,19 @@ const Banks = () => {
           </div>
         </form>
 
+        {branchDetails && !ifscDetails && (
+          <div className="branch-details">
+            <h2>Branch Details</h2>
+            <ul>
+              {Object.entries(branchDetails).map(([key, value]) => (
+                <li key={key}>
+                  <strong>{key}:</strong> {value.toString()}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-      {/* Branch Details */}
-      {branchDetails && !ifscDetails && (
-        <div className="branch-details">
-          <h2>Branch Details</h2>
-          <ul>
-            {Object.entries(branchDetails).map(([key, value]) => (
-              <li key={key}>
-                <strong>{key}:</strong> {value.toString()}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-
-        {/* IFSC Details */}
         {ifscDetails && (
           <div className="ifsc-details">
             <h3>Bank Details (IFSC)</h3>

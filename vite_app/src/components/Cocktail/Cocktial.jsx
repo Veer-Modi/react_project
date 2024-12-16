@@ -85,7 +85,7 @@ const Cocktail = () => {
             key={category.strCategory}
             onClick={() => handleCategoryClick(category.strCategory)}
           >
-            <h2>{category.strCategory}</h2> 
+            <h2>{category.strCategory}</h2>
           </li>
         ))}
       </ul>

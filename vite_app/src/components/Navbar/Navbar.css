@@ -9,16 +9,16 @@
     top: 5%;
     border-radius: 50rem;
     z-index: 10;
-  }
-  
-  .nav {
+}
+
+.nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 95%;
-  }
-  
-  .nav-item {
+}
+
+.nav-item {
     color: cyan;
     font-weight: 600;
     font-size: 0.9rem;
@@ -28,9 +28,9 @@
     border-radius: 50rem;
     position: relative;
     transition: color 0.3s ease;
-  }
-  
-  .nav-item::after {
+}
+
+.nav-item::after {
     content: '';
     position: absolute;
     bottom: 0%;
@@ -41,9 +41,9 @@
     background-color: rgb(73, 204, 255);
     transform: scale(0, 1);
     transition: all 0.5s;
-  }
-  
-  .nav-item:hover::after {
+}
+
+.nav-item:hover::after {
     content: '';
     position: absolute;
     bottom: 0%;
@@ -53,22 +53,22 @@
     transform: scale(1, 1);
     border-radius: 100vw;
     background-color: rgb(61, 193, 245);
-  }
-  
-  .nav-item:hover {
+}
+
+.nav-item:hover {
     transform: translateY(-10%);
     transition: all 0.5s;
-  }
-  
-  .nav-item.active::after {
+}
+
+.nav-item.active::after {
     width: 100%;
     left: 0;
     transform: scale(1, 1);
     background-color: rgb(110, 214, 255);
-  }
-  
-  .nav-item.active {
-    color: cyan; 
+}
+
+.nav-item.active {
+    transform: translateY(-10%);
+    color: cyan;
     font-weight: bold;
-  }
-  
+}
