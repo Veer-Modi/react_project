@@ -1,0 +1,117 @@
+/* CocktailDetails.css */
+.cocktail-details {
+  margin-top: 14vh;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.cocktail-profile {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+}
+
+.cocktail-det {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 5rem 0;
+}
+
+.cocktail-details img {
+  border-radius: 10px;
+  margin: 1rem 1rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.cocktail-det h1 {
+  margin: 1rem 0;
+  font-size: 3rem;
+}
+
+.cocktail-int {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.ingredients {
+  width: 20%;
+}
+
+.ingredients h3 {
+  margin: 2rem 30rem 2rem 0;
+}
+
+.instruction {
+  width: 50%;
+}
+
+.instruction h3 {
+  margin: 2rem 0 2rem 35rem;
+}
+
+.instruction p {
+  height: max-content;
+}
+
+.cocktail-details ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+.cocktail-details ul li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: white;
+  text-decoration: none;
+  background: #444;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.back-btn:hover {
+  background: #555;
+}
+
+.cocktail-details img.clickable-img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.cocktail-details img.clickable-img:hover {
+  transform: scale(1.05);
+}
+
+.video-container {
+  margin: 1rem 1rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  object-fit: cover;
+  text-align: center;
+}
+
+.video-container iframe {
+  width: 37vw;
+  height: 50vh;
+}
